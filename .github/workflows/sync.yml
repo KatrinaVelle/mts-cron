@@ -48,7 +48,7 @@ jobs:
         run: tar xzf mastodon-twitter-sync-x86_64-unknown-linux-gnu.tar.gz
 
       - name: Execute sync
-        run: cd cache && ../mastodon-twitter-sync --config=../config/mastodon-twitter-sync.toml
+        run: cd cache && ../mastodon-twitter-sync --config=../config/mastodon-twitter-sync.toml --skip-existing-posts
 
       - name: Delete old Github Actions cache entries
         run: cd config && ./cache-cleanup.sh
